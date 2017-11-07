@@ -1,0 +1,73 @@
+<Alloy>
+<Collection src="webNews" />
+	<TabGroup>
+
+		<Tab title="News" icon="KS_nav_ui.png">
+		<Window title="News">
+		<TableView dataCollection="webNews" dataTransform="transformFunction">
+  		  <TableViewRow layout="vertical">
+    	    <ImageView image="{image}" top=20 />
+    	    <Label text="{name}" bottom=20 /> 
+   		 </TableViewRow>
+		</TableView>
+		</Window>
+		</Tab>
+
+		<Tab title="Events" icon="KS_nav_views.png">
+			<Window title="Events">
+				<!-- <Label>I am Window 2</Label> -->
+				<TableView onClick="tableClick"> 
+					<TableViewSection headerTitle=" ">
+					<TableViewRow title="Computer Science" dept_id="comp" hasChild=true /> 
+				</TableViewSection>
+			<TableViewSection headerTitle=" ">
+				<TableViewRow title="Communication Studies" dept_id="coms" hasChild=true />
+			</TableViewSection> 
+		</TableView>
+			</Window>
+		</Tab>
+
+
+		<Tab title="Map" icon="KS_nav_views.png">
+				<Window title="Map" navBarHidden=true>>
+					<!-- <Label>I am Window 2</Label> -->
+					<Module id="mapView" module="ti.map" method="createView" userLocation=true onClick="mapClicked">
+					<Annotation id='acHall' />
+					<Annotation id='waihang' />
+					<Button title="Move" bottom=10 onClick="btClick" />
+					</Module>
+				</Window>
+		</Tab>
+
+		<Tab title="Facilities" icon="KS_nav_views.png">
+			<Window title="Facilities" layout="vertical">
+  
+			<Button title="Login" onClick="loginFunction" top=50 /> 
+						<TextField id="textField" hintText="userid"/>
+          <TextField id="textField2" hintText="password"/> 
+
+			</Window>
+		</Tab>
+
+		<Tab title="About us" icon="KS_nav_views.png">
+
+			<Window title="About us">
+				<!-- <Label>I am Window 2</Label> -->
+				<TableView>
+   			 <TableViewSection headerTitle="About HKBU">
+ 		       <TableViewRow>
+				<TextArea value="Hong Kong Baptist University (HKBU) is a publicly funded tertiary institution with a Christian education heritage... \n" /> 
+				</TableViewRow>
+  				  </TableViewSection> 
+			<TableViewSection headerTitle="Contact us">
+        <TableViewRow>
+		<TextArea id="textArea2"/> 
+		</TableViewRow>
+    	</TableViewSection> 
+
+   		</TableView>
+			</Window>
+		</Tab>
+
+	</TabGroup>
+</Alloy>
